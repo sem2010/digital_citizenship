@@ -1,0 +1,148 @@
+/* Chosen Palette: Digital Playground (Vibrant & Energetic) */
+/* CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. */
+
+/* Digital Playground Palette */
+:root {
+    --playground-bg-light: #F7FAFC; /* Very light background */
+    --playground-card-bg: #FFFFFF; /* White for content cards */
+
+    --playground-accent-blue: #3B82F6; /* Bright Blue */
+    --playground-accent-green: #22C55E; /* Lively Green */
+    --playground-accent-yellow: #F59E0B; /* Cheerful Yellow/Orange */
+    --playground-accent-pink: #EC4899; /* Playful Pink */
+    --playground-accent-purple: #8B5CF6; /* Vibrant Purple */
+
+    --playground-text-dark: #1F2937; /* Dark Grey for main text */
+    --playground-text-medium: #4B5563; /* Medium Grey for secondary text */
+    --playground-border-light: #E5E7EB; /* Light border */
+    --playground-border-medium: #D1D5DB; /* Medium border */
+}
+
+body {
+    background-color: var(--playground-bg-light);
+    color: var(--playground-text-dark);
+    font-family: 'Noto Sans KR', sans-serif; /* Google Fonts for better Korean typography */
+}
+
+/* General styling for cards and shadows */
+.bg-white {
+    background-color: var(--playground-card-bg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    border-radius: 16px; /* Even rounder corners */
+}
+
+/* Chart container specific styling */
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Chart max width */
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px; /* Base height for chart */
+    max-height: 300px; /* Max height for chart */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: var(--playground-card-bg);
+    padding: 1rem; /* Add some padding inside the chart container */
+}
+@media (min-width: 768px) {
+    .chart-container {
+        height: 300px;
+    }
+}
+
+/* Filter buttons for pledges */
+.btn-filter {
+    background-color: var(--playground-border-light);
+    color: var(--playground-text-dark);
+    border-radius: 9999px; /* Full pill shape */
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.btn-filter:hover {
+    background-color: var(--playground-accent-green);
+    color: var(--playground-card-bg);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.btn-filter.active {
+    background: linear-gradient(45deg, var(--playground-accent-green), var(--playground-accent-yellow)); /* Gradient for active filter */
+    color: var(--playground-card-bg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    transform: translateY(-1px);
+}
+
+/* Input fields */
+input[type="text"] {
+    border: 2px solid var(--playground-border-medium);
+    border-radius: 8px;
+    padding: 12px;
+    background-color: var(--playground-card-bg);
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--playground-accent-pink);
+    box-shadow: 0 0 0 4px rgba(236, 72, 153, 0.2); /* Brighter focus ring */
+}
+
+/* Specific list styles */
+ul.list-disc li::before,
+ul.list-circle li::before {
+    color: var(--playground-accent-pink); /* List bullets in pink */
+    font-size: 1.2em; /* Slightly larger bullets */
+}
+ol.list-decimal li::marker {
+    color: var(--playground-accent-blue); /* Ordered list numbers in blue */
+    font-weight: bold;
+}
+
+/* Border adjustments */
+.border-b-2 { border-bottom-color: var(--playground-border-light); }
+.border-gray-200 { border-color: var(--playground-border-light); }
+.border-gray-300 { border-color: var(--playground-border-medium); }
+.border-l-4 {
+    border-left-color: var(--playground-accent-yellow); /* Left border in yellow */
+    border-radius: 6px;
+}
+
+/* Text color adjustments for better contrast with new palette */
+.text-gray-800 { color: var(--playground-text-dark); }
+.text-gray-700 { color: var(--playground-text-dark); }
+.text-gray-600 { color: var(--playground-text-medium); }
+
+/* Styles for checked pledges */
+.pledge-item {
+    display: flex; /* Use flexbox to align checkbox and text */
+    align-items: flex-start; /* Align items to the top */
+    gap: 0.75rem; /* Space between checkbox and text */
+    padding: 0.5rem 0; /* Vertical padding for each item */
+}
+
+.pledge-item .pledge-checkbox {
+    flex-shrink: 0; /* Prevent checkbox from shrinking */
+    width: 1.25rem; /* Standard checkbox size */
+    height: 1.25rem;
+    margin-top: 0.25rem; /* Adjust vertical alignment with text */
+    accent-color: var(--playground-accent-blue); /* Color of the checkmark */
+    cursor: pointer;
+}
+
+.pledge-item .pledge-text {
+    flex-grow: 1; /* Allow text to take remaining space */
+    transition: all 0.3s ease-in-out; /* Smooth transition for check effect */
+}
+
+.pledge-item.checked .pledge-text {
+    text-decoration: line-through; /* 취소선 */
+    opacity: 0.6; /* 흐리게 */
+    color: var(--playground-text-medium); /* 색상도 약간 흐리게 */
+}
